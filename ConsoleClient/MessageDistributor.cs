@@ -11,6 +11,7 @@ namespace ConsoleClient
         public MessageDistributor(IMailPoller poller, IMailSender sender, IReceiverManager receivcerManager)
         {
             _poller = poller;
+            _poller.NewMail += Distribute;
             _sender = sender;
             _receivcerManager = receivcerManager;
         }

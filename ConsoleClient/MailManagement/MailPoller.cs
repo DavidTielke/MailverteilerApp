@@ -4,14 +4,14 @@ namespace ConsoleClient
 {
     class MailPoller : IMailPoller
     {
-        private readonly IMessageDistributor _distributor;
         private readonly IMailDownlaoder _downlaoder;
 
-        public MailPoller(IMessageDistributor distributor, IMailDownlaoder downlaoder)
+        public MailPoller(IMailDownlaoder downlaoder)
         {
-            _distributor = distributor;
             _downlaoder = downlaoder;
         }
+
+        public event Action NewMail;
 
         public void Stop()
         {
@@ -31,7 +31,12 @@ namespace ConsoleClient
 
             _downlaoder.DownloadMail();
 
-            _distributor.Distribute();
+            OnNewMail();
+        }
+
+        protected virtual void OnNewMail()
+        {
+            NewMail?.Invoke();
         }
     }
 }

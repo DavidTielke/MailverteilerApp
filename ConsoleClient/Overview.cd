@@ -14,14 +14,13 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ConsoleClient.MailPoller">
-    <Position X="2" Y="2.75" Width="1.5" />
+    <Position X="2" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAACAAAAAAKAAQAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAACAAAIAAKAACAAAAAAA=</HashCode>
       <FileName>MailManagement\MailPoller.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_downlaoder" />
-      <Field Name="_distributor" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
@@ -53,7 +52,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ConsoleClient.MailDownlaoder">
-    <Position X="2" Y="7" Width="1.5" />
+    <Position X="2" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MailManagement\MailDownlaoder.cs</FileName>
@@ -75,7 +74,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="ConsoleClient.IMailDownlaoder">
-    <Position X="2" Y="5.25" Width="1.5" />
+    <Position X="2" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MailManagement\IMailDownlaoder.cs</FileName>
@@ -91,7 +90,7 @@
   <Interface Name="ConsoleClient.IMailPoller">
     <Position X="2" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAKAACAAAAAAA=</HashCode>
       <FileName>MailManagement\IMailPoller.cs</FileName>
     </TypeIdentifier>
   </Interface>

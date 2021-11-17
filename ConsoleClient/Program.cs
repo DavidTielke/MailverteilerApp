@@ -1,4 +1,6 @@
-﻿namespace ConsoleClient
+﻿using Ninject;
+
+namespace ConsoleClient
 {
     // Namensmuster
     // Manager
@@ -13,13 +15,16 @@
     {
         static void Main(string[] args)
         {
-            var downloader = new MailDownlaoder();
-            var poller = new MailPoller(null, downloader);
-            var sender = new MailSender();
-            var repo = new ReceiverRepository();
-            var manager = new ReceiverManager(repo);
+            var kernel = new StandardKernel();
 
-            var dist = new MessageDistributor(poller, sender, manager);
+            kernel.Bind<IMessageDistributor>().To<MessageDistributor>();
+            kernel.Bind<IMailDownlaoder>().To<MailDownlaoder>();
+            kernel.Bind<IMailPoller>().To<MailPoller>();
+            kernel.Bind<IMailSender>().To<MailSender>();
+            kernel.Bind<IReceiverRepository>().To<ReceiverRepository>();
+            kernel.Bind<IReceiverManager>().To<ReceiverManager>();
+
+            var dist = kernel.Get<IMessageDistributor>();
 
             dist.Start();
             dist.Stop();
